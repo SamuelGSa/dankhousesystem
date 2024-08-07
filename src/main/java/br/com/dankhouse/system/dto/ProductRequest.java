@@ -1,6 +1,5 @@
 package br.com.dankhouse.system.dto;
 
-
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -11,7 +10,7 @@ import lombok.Setter;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class ProductResponse {
+public class ProductRequest {
 
     @JsonProperty("codigoProduto")
     private String productCode;
@@ -37,4 +36,3 @@ public class ProductResponse {
     @JsonProperty("markup")
     private double markup;
 }
-
