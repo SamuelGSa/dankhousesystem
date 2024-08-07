@@ -13,4 +13,6 @@ public interface ProductService {
 
     ProductResponse saveProduct(ProductRequest productRequest);
 
+    ProductResponse getProductByProductCode(String name);
+
 }

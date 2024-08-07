@@ -11,7 +11,6 @@ import org.springframework.stereotype.Service;
 
 import java.util.Collections;
 import java.util.List;
-import java.util.Optional;
 import java.util.stream.Collectors;
 
 @Slf4j
@@ -56,6 +55,17 @@ public class ProductsServiceImpl implements ProductService{
 
         productsRepository.save(product);
         var productResponse = productsMapper.mapModelToDTO(product);
+        return productResponse;
+    }
+
+    @Override
+    public ProductResponse getProductByProductCode(String id) {
+        var produtoSolicitado = productsRepository.findByProductCode(id);
+        if (produtoSolicitado == null) {
+            return new ProductResponse();
+        }
+        var productResponse = productsMapper.mapModelToDTO(produtoSolicitado);
+
         return productResponse;
     }
 

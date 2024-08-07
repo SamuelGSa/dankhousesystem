@@ -1,6 +1,17 @@
-CREATE TABLE IF NOT EXISTS product (
-    id BIGINT AUTO_INCREMENT PRIMARY KEY,
-    product_code VARCHAR(255) NOT NULL,
+--CREATE TABLE IF NOT EXISTS product (
+--    id BIGINT AUTO_INCREMENT PRIMARY KEY,
+--    product_code VARCHAR(255) NOT NULL UNIQUE,
+--    category VARCHAR(255) NOT NULL,
+--    brand VARCHAR(255) NOT NULL,
+--    name VARCHAR(255) NOT NULL,
+--    quantity INT NOT NULL,
+--    unit_purchase_price DOUBLE NOT NULL,
+--    unit_sales_price DOUBLE NOT NULL,
+--    markup DOUBLE
+--);
+
+CREATE TABLE product (
+    product_code VARCHAR(10) PRIMARY KEY,
     category VARCHAR(255) NOT NULL,
     brand VARCHAR(255) NOT NULL,
     name VARCHAR(255) NOT NULL,
@@ -9,7 +20,6 @@ CREATE TABLE IF NOT EXISTS product (
     unit_sales_price DOUBLE NOT NULL,
     markup DOUBLE
 );
-
 
 
 ---- Inserir dados na tabela product

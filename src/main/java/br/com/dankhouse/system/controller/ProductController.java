@@ -34,7 +34,7 @@ public class ProductController {
         return new ResponseEntity<>(productsList, HttpStatus.OK);
     }
 
-    @GetMapping("/{name}")
+    @GetMapping("name/{name}")
     public ResponseEntity<List<ProductResponse>> getProductByName(@PathVariable String name) {
 
         var product = productService.getProductByName(name);
@@ -47,4 +47,12 @@ public class ProductController {
         var productSave = productService.saveProduct(productRequest);
         return new ResponseEntity<>(productSave, HttpStatus.CREATED);
     }
+
+    @GetMapping("/{id}")
+    public ResponseEntity<ProductResponse> getProductById(@PathVariable String id) {
+
+        var product = productService.getProductByProductCode(id);
+        return new ResponseEntity<>(product, HttpStatus.OK);
+    }
+
 }
